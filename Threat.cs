@@ -1,5 +1,8 @@
-﻿namespace WpfApp1
+﻿using System;
+
+namespace WpfApp1
 {
+    [Serializable]
     public class Threat
     {
         public string ID { get; set; }
@@ -22,6 +25,7 @@
             Integrity = integrity;
             Availability = availability;
         }
+        public Threat() { }
 
         public static bool Equals(Threat first, Threat second)
         {

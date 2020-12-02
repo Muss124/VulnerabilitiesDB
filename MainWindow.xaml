@@ -8,9 +8,8 @@
         Title="Vulnerabilities DB" Height="720" Width="1280">
     <Grid>
         <TextBlock Name="StatusBar" Text="Всё ок"  Height="50" Width="500" Margin="48,25,726,616" Background="DarkGray"/>
-        <Button Content="Press me" HorizontalAlignment="Left" Margin="992,29,0,0" VerticalAlignment="Top" Width="171" Height="41" Click="ButtonClick"/>
-        <Button Name ="Test" Content="asd" Margin="585,25,327,617" Click="TestClick"/>
-        <DataGrid Name="Data" IsReadOnly="true" HorizontalAlignment="Left" Height="450" VerticalAlignment="Center" Width="1115" Margin="48,109,109,134" ItemsSource="{Binding Source=displayData}" AutoGenerateColumns="False" CanUserSortColumns="False">
+        <Button Content="Force Update" HorizontalAlignment="Left" Margin="992,29,0,0" VerticalAlignment="Top" Width="171" Height="41" Click="ForceUpdate"/>
+        <DataGrid Name="Data" IsReadOnly="true" HorizontalAlignment="Center" MaxHeight="450" VerticalAlignment="Top" Width="1115" Margin="48,109,109,134" ItemsSource="{Binding Source=displayData}" AutoGenerateColumns="False" CanUserSortColumns="False">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="0.1*" />
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="0.9*">
@@ -23,10 +22,10 @@
             </DataGrid.Columns>
             <DataGrid.RowDetailsTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Vertical"  HorizontalAlignment="Left" >
+                    <StackPanel Orientation="Vertical"  HorizontalAlignment="Left" Width="1000">
                         <StackPanel Orientation="Horizontal" >
                             <TextBlock Text="Источник угрозы - " FontWeight="Bold"/>
-                            <TextBlock Text="{Binding Source}" TextWrapping="Wrap" Width="1000"/>
+                            <TextBlock Text="{Binding Source}" TextWrapping="Wrap" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Описание - " FontWeight="Bold"/>
@@ -61,10 +60,10 @@
                 </DataTemplate>
             </DataGrid.RowDetailsTemplate>
         </DataGrid>
-        <Button  Name="NextPage" Margin="1035,569,109,38" Background="White" BorderThickness="0" Click="NextPages">
+        <Button  Name="NextPage" Margin="960,569,184,38" Background="White" BorderThickness="0" Click="NextPages">
             <Image Source="https://www.onlygfx.com/wp-content/uploads/2017/09/grunge-arrow-2-3.png"/>
         </Button>
-        <Button Name="PreviousPage" Margin="585,569,563,38" Background="White" BorderThickness="0" Click="PreviousPages">
+        <Button Name="PreviousPage" Margin="510,569,638,38" Background="White" BorderThickness="0" Click="PreviousPages">
             <Image Source="https://www.onlygfx.com/wp-content/uploads/2017/09/grunge-arrow-2-3.png" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <TransformGroup>
@@ -77,9 +76,9 @@
 
             </Image>
         </Button>
-        <TextBlock  Name="CurrentPages" Text="nothing to display" Height="Auto" FontSize="28" Margin="716,592,244,61" TextAlignment="Center" VerticalAlignment="Center" />
-        <TextBlock  Name="RecordsPerPageText" Text="Records per 1 page:" FontSize="28" TextAlignment="Right" VerticalAlignment="Center" Margin="173,592,784,38" Height="61" />
-        <ComboBox Name="RecordsPerPage" Margin="495,592,700,0" SelectedIndex="0" FontSize="28" VerticalAlignment="Top" Height="38" SelectionChanged="PagesSelected">
+        <TextBlock  Name="CurrentPages" Text="nothing to display" Height="Auto" FontSize="28" Margin="641,592,319,61" TextAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock  Name="RecordsPerPageText" Text="Records per 1 page:" FontSize="28" TextAlignment="Right" VerticalAlignment="Center" Margin="98,592,859,38" Height="61" />
+        <ComboBox Name="RecordsPerPage" Margin="420,592,775,0" SelectedIndex="0" FontSize="28" VerticalAlignment="Top" Height="38" SelectionChanged="PagesSelected">
             <ComboBoxItem>15</ComboBoxItem>
             <ComboBoxItem>25</ComboBoxItem>
             <ComboBoxItem>50</ComboBoxItem>

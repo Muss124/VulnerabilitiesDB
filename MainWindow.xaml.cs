@@ -42,12 +42,10 @@ namespace WpfApp1
         private string _currentPages = "nothing to display";
 
 
-        private string _status = "Всё ок!";
-
-
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             this.FontFamily = new FontFamily("Comic Sans MS");
             Data.ItemsSource = displayData;
             CheckSaved();
@@ -85,7 +83,7 @@ namespace WpfApp1
                     }
                     _currentPages = $"{_pageFirstIndex}..{_pageLastIndex} out of {_data.Count()}";
                     Update();
-                    MessageBox.Show("File was downloaded and analyzed!");
+                    MessageBox.Show("File was downloaded and analyzed!", "Remoute data fetch", MessageBoxButton.OK, MessageBoxImage.Information);
                     
                 }
             }
@@ -98,7 +96,7 @@ namespace WpfApp1
                 BinaryFormatter formatter = new BinaryFormatter();
                 _data = (ObservableCollection<Threat>)formatter.Deserialize(fs);
             }
-            MessageBox.Show("Data successfully readed from local file!");
+            MessageBox.Show("Data successfully readed from local file!", "Local data fetch", MessageBoxButton.OK, MessageBoxImage.Information);
             if (_data.Count() == 0)
             {
                 _pageFirstIndex = 0;
@@ -198,6 +196,8 @@ namespace WpfApp1
                 }
                 new Diff().ShowDialog();
                 _data = _dataNew;
+                _pageFirstIndex = 1;
+                _pageLastIndex = _pageFirstIndex + _displayAmount <= _data.Count() ? _pageFirstIndex + _displayAmount : _data.Count();
                 Update();
             }
             catch (Exception ex)
@@ -216,10 +216,7 @@ namespace WpfApp1
 
         private void Update()
         {
-            StatusBar.Text = _status;
-            CurrentPages.Text = _currentPages;
-
-                        
+            CurrentPages.Text = _currentPages;                        
 
             displayData.Clear();
 

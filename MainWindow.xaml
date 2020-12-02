@@ -7,8 +7,8 @@
         ResizeMode="NoResize"
         Title="Vulnerabilities DB" Height="720" Width="1280">
     <Grid>
-        <TextBlock Name="StatusBar" Text="Всё ок"  Height="50" Width="500" Margin="48,25,726,616" Background="DarkGray"/>
-        <Button Content="Force Update" HorizontalAlignment="Left" Margin="992,29,0,0" VerticalAlignment="Top" Width="171" Height="41" Click="ForceUpdate"/>
+        <TextBlock Name="ProjectName" Text="Lab 2. Vulnerabilities DB" Margin="48,25,319,601" Foreground ="Purple" FontSize="48"/>
+        <Button Content="Force Update" FontSize="28" HorizontalAlignment="Left" Margin="960,29,0,0" VerticalAlignment="Top" Width="203" Height="61" Click="ForceUpdate"/>
         <DataGrid Name="Data" IsReadOnly="true" HorizontalAlignment="Center" MaxHeight="450" VerticalAlignment="Top" Width="1115" Margin="48,109,109,134" ItemsSource="{Binding Source=displayData}" AutoGenerateColumns="False" CanUserSortColumns="False">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="0.1*" />

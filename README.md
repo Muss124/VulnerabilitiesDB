@@ -10,9 +10,9 @@ Program that fetch information from remote resource and create local storage, sh
   * Source
   * Vulnurability's object 
   * Violation of CIA
-* [ ] Auto update on request
-  * [ ] Success status
-  * [ ] Present diff of data and total of new records
+* [x] Auto update on request
+  * [x] Success status
+  * [x] Present diff of data and total of new records
 * [x] Present information as table with fields
   * ID (ex. "УБИ.123")
   * Name
@@ -20,6 +20,6 @@ Program that fetch information from remote resource and create local storage, sh
   * [x] Choise for amount of records per page
   * [x] No less than 15 records per page
 * [x] Can see full information for each record
-* [ ] Can save data as file on drive
-  * [ ] On start program should check if there is saved data
-  * [ ] Notify if there is no saved data and ask to start download
+* [x] Can save data as file on drive
+  * [x] On start program should check if there is saved data
+  * [x] Notify if there is no saved data and ask to start download
